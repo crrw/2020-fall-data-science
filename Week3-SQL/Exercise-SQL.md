@@ -15,17 +15,36 @@ For this section of the exercise we will be using the `bigquery-public-data.aust
 
 5. Write a query that tells us how many rows are in the table. 
 	```
-	[YOUR QUERY HERE]
+	SELECT count(*) as `total_row`
+	FROM
+  		`bigquery-public-data.austin_311.311_service_requests`
+	LIMIT
+  		1000
 	```
 
 7. Write a query that tells us how many _distinct_ values there are in the complaint_description column.
 	``` 
-	[YOUR QUERY HERE]
+	SELECT
+  		COUNT (DISTINCT complaint_description) AS `distinct_complaint`
+	FROM
+  		`bigquery-public-data.austin_311.311_service_requests`
+	LIMIT
+  		1000
 	```
   
 8. Write a query that counts how many times each owning_department appears in the table and orders them from highest to lowest. 
 	``` 
-	[YOUR QUERY HERE]
+	SELECT
+  		owning_department,
+  		COUNT(owning_department)
+	FROM
+  		`bigquery-public-data.austin_311.311_service_requests`
+	GROUP BY
+  		owning_department
+	ORDER BY
+  		owning_department DESC
+	LIMIT
+  		1000
 	```
 
 9. Write a query that lists the top 5 complaint_description that appear most and the amount of times they appear in this table. (hint... limit)
@@ -107,5 +126,5 @@ For this section of the exercise we will be using the `bigquery-public-data.aust
 4. Click the 'Share' button on the top right.  
 5. Change the permissions so anyone with link can view. 
 6. Copy the link and paste it right below this line. 
-	* YOUR LINK:  ________________________________
+	* YOUR LINK:  https://colab.research.google.com/drive/18h4rB645JnQg4s7N78vRQ8Eh1Hhosa_Q?usp=sharing
 9. Complete the two questions in the colab notebook file. 
