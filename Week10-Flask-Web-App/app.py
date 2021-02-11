@@ -4,8 +4,6 @@ import pickle
 import pandas as pd
 import skimage
 
-
-
 app = flask.Flask(__name__, template_folder='templates')
 
 path_to_vectorizer = 'models/vectorizer.pkl'

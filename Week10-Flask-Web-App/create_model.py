@@ -30,5 +30,3 @@ model.fit(X, y)
 pickle.dump(vectorizer, open('models/vectorizer.pkl', 'wb') )
 
 pickle.dump(model, open('models/text-classifier.pkl', 'wb') )
-
-
